@@ -21,9 +21,10 @@ const [user, setUser] = useState<User | null>(null);
 3. Missing Dependency in UserEffect
 usedId should be present in the dependency array of the useEffect, otherwise if userId changes, the effect won't re-run
 Suggestion:
-useEffect(() => {
-    .....
-}, [userId]);
+
+    useEffect(() => {
+        .....
+    }, [userId]);
 
 4. Error Handling can be improved
 Only logging the error is not good. There must be user facing feedback if the fetch actually fails. 

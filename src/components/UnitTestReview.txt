@@ -1,0 +1,10 @@
+Positives:
+1. It does tests the initial "Loading state" properly
+
+Issues and Improvements:
+1. Coverage
+The Coverage is not 100%. It misses tests for:
+    Succssful fetch
+    Failed fetch
+    Re-render when the userId changes
+
