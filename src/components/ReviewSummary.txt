@@ -1,0 +1,11 @@
+Final Review Summary
+
+Bugs: Missing userId dependency in useEffect. State typing too loose.
+
+Readability/Maintainability: Use proper types, handle loading/error explicitly, extract fetch logic.
+
+Performance: Add cleanup (AbortController).
+
+Security: Use environment variables instead of hardcoding the api urls
+
+Unit Tests: Expand to cover success, error, and prop changes. Mock fetch.
