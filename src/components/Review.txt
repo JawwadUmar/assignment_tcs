@@ -1,0 +1,34 @@
+Positives:
+1. Component is functionally correct and there is no compile-time or run-time errors.
+2. Basic error handling exists
+
+Issues:
+1. Use of any keyword violates type-safety
+const [user, setUser] = useState<any>(null);
+
+2. Define a proper User type and then declare the above useState
+Suggestion: 
+type User = {
+    id: number;
+    name: string;
+    bio: string;
+};
+
+const [user, setUser] = useState<User | null>(null);
+
+3. Missing Dependency in UserEffect
+usedId should be present in the dependency array of the useEffect, otherwise if userId changes, the effect won't re-run
+Suggestion:
+useEffect(() => {
+    .....
+}, [userId]);
+
+4. Error Handling canbe improved
+Only logging the error is not good. There must be user facing feedback if the fetch actually fails. 
+
+Suggestion:
+This can be done by maintaining an error state which renders a message upon failure.
+
+const [error, setError] = useState<string | null>(null);
+fetch(...).catch(err=>setError('Failed to load user data'));
+
