@@ -8,3 +8,5 @@ The Coverage is not 100%. It misses tests for:
     Failed fetch
     Re-render when the userId changes
 
+Mock fetch and test it for the different outcomes.
+Make sure to add cleanUp between tests as it can lead to leaking of mocks. [afterEach(()=>jest.clearAllMocks());]
